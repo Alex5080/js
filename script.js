@@ -43,8 +43,8 @@ for (let i = 0; i < 2; i++) {
 */
 
 
-let i = 0;
-/*do {const a = prompt('Один из последних просмотренных фильмов?', ''),
+/*let i = 0;
+do {const a = prompt('Один из последних просмотренных фильмов?', ''),
             b = prompt('На сколько оцените его?', '');
 
     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
@@ -60,13 +60,17 @@ let i = 0;
 while( i <2);
 console.log(personalMovieDB);
 */
+
+
+let i=0
 while (i <2){
     const a = prompt('Один из последних просмотренных фильмов?', ''),
             b = prompt('На сколько оцените его?', '');
 
     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
         personalMovieDB.movies[a] = b;
-        console.log('super'); i++;
+        console.log('super'); 
+        i++;
 
     } else {
         console.log('error');

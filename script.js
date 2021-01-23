@@ -53,6 +53,7 @@ do {const a = prompt('Один из последних просмотренны�
         console.log('error');
         i--;
     }
-    console.log(personalMovieDB);
+    
 }
 while( i <2);
+console.log(personalMovieDB);

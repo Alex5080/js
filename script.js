@@ -22,13 +22,15 @@ const personalMovieDB = {
     movies: {},
     actors: {},
     genres: [],
-    privat: false
-    start:function() {
+    privat: false,
+
+    start: function(){
         personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
-        while(personalMovieDB.count =="" || numberOfFilms ==null || isNaN(personalMovieDB.count)){
-            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');   
+
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
-    
+
     },
     rememberMyFilms:function(){
 
@@ -63,17 +65,26 @@ const personalMovieDB = {
     },
     toggleVisibleMyDB:function(){
         if (personalMovieDB.privat) {
-            personalMovieDB.privat=false
+            personalMovieDB.privat = false;
         } 
         else{
-            personalMovieDB.privat=true
+            personalMovieDB.privat = true;
         } 
     },
     writeYourGenres:function() {
-        for (let i = 1; i < 4 ; i++ ) {
-            const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-            personalMovieDB.genres [i - 1] = genre;
-        }
+        for (let i = 1; i <=3 ; i++ ) {
+            let genres = prompt(`Ваш любимый жанр под номером ${i}`);
+            if (genres == null || genres =="") {
+                console.log("повторите попытку!");
+                i --;
+            }
+            else{
+                personalMovieDB.genres [i - 1] = genres;
+            }
+       }
+       personalMovieDB.genres.forEach((item, i) => {
+        console.log(`"Любимый жанр ${ i + 1} - это название из массива ${item}`);
+       } ) ;
     }
 };
 
